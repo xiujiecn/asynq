@@ -11,11 +11,11 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/hibiken/asynq/internal/base"
-	"github.com/hibiken/asynq/internal/log"
-	"github.com/hibiken/asynq/internal/rdb"
 	"github.com/redis/go-redis/v9"
 	"github.com/robfig/cron/v3"
+	"github.com/xiujiecn/asynq/internal/base"
+	"github.com/xiujiecn/asynq/internal/log"
+	"github.com/xiujiecn/asynq/internal/rdb"
 )
 
 // A Scheduler kicks off tasks at regular intervals based on the user defined schedule.
@@ -105,7 +105,7 @@ func newScheduler(opts *SchedulerOpts) *Scheduler {
 		state:             &serverState{value: srvStateNew},
 		heartbeatInterval: heartbeatInterval,
 		logger:            logger,
-		cron:              cron.New(cron.WithLocation(loc)),
+		cron:              cron.New(cron.WithLocation(loc), cron.WithSeconds()),
 		location:          loc,
 		done:              make(chan struct{}),
 		preEnqueueFunc:    opts.PreEnqueueFunc,

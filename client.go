@@ -11,10 +11,10 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/hibiken/asynq/internal/base"
-	"github.com/hibiken/asynq/internal/errors"
-	"github.com/hibiken/asynq/internal/rdb"
 	"github.com/redis/go-redis/v9"
+	"github.com/xiujiecn/asynq/internal/base"
+	"github.com/xiujiecn/asynq/internal/errors"
+	"github.com/xiujiecn/asynq/internal/rdb"
 )
 
 // A Client is responsible for scheduling tasks.

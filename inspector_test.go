@@ -15,11 +15,11 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/google/uuid"
-	"github.com/hibiken/asynq/internal/base"
-	"github.com/hibiken/asynq/internal/rdb"
-	h "github.com/hibiken/asynq/internal/testutil"
-	"github.com/hibiken/asynq/internal/timeutil"
 	"github.com/redis/go-redis/v9"
+	"github.com/xiujiecn/asynq/internal/base"
+	"github.com/xiujiecn/asynq/internal/rdb"
+	h "github.com/xiujiecn/asynq/internal/testutil"
+	"github.com/xiujiecn/asynq/internal/timeutil"
 )
 
 func testInspectorQueues(t *testing.T, inspector *Inspector, r redis.UniversalClient) {
